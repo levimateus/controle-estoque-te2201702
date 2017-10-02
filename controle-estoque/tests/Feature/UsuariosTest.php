@@ -48,7 +48,7 @@ class UsuariosTest extends TestCase
         ]);
 
         //verificamos se o sistema redirecionou para a página home
-        //se der erro no login, o sistema redireciona para /
+        //se der erro no login, o sistema redireciona para '/'
         $this->assertEquals(302, $response->getStatusCode());
         $response->assertRedirect('/home');
     }
@@ -149,6 +149,8 @@ class UsuariosTest extends TestCase
 
     public function test_usuario_administrador_pode_desativar_acesso_de_usuarios(){
         
-        $this->assertTrue(true);
+        $this->markTestIncomplete(
+          'This test has not been implemented yet.'
+        );
     }
 }
