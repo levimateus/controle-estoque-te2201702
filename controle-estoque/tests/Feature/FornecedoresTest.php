@@ -54,6 +54,20 @@ class FornecedoresTest extends TestCase
 
     }
 
+    public function test_usuarios_logados_podem_acessar_pagina_de_fornecedores(){
+            Artisan::call('migrate');
+            $usuario = factory('App\User')->create();
+
+            //se não estiver logado
+            $response = $this->withExceptionHandling()->call('GET', '/fornecedores');
+            $response->assertStatus(403);
+
+            //se estiver
+            $response = $this->withExceptionHandling()->actingAs($usuario)->call('GET', '/fornecedores');
+            $response->assertStatus(200);
+            
+        }
+
     public function test_usuarios_logados_podem_listar_fornecedores(){
 
         $this->markTestIncomplete(

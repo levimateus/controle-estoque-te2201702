@@ -9,6 +9,12 @@ use App\Fornecedor;
 
 class FornecedorController extends Controller
 {
+    public function index(){
+        
+        if(auth()->user() != null) return view('fornecedor.index');
+        else abort(403);
+    }
+
     public function store(Request $request){
     	$fornecedor = new Fornecedor;
 

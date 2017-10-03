@@ -18,5 +18,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::post('/inserir/fornecedor', 'FornecedorController@store');
+Route::get('/produtos', 'ProdutoController@index');
 Route::post('/inserir/produto', 'ProdutoController@store');
+Route::post('/debitar/produto', 'ProdutoController@debitar');
+Route::post('/editar/produto', 'ProdutoController@editar');
+Route::get('/fornecedores', 'FornecedorController@index');
+Route::post('/inserir/fornecedor', 'FornecedorController@store');
