@@ -1,0 +1,16 @@
+Produto:
+- nome
+- descrição
+- fornecedor
+- custo
+- quantidade
+
+Fornecedor:
+- nome
+- endereço
+- cnpj
+
+Usuário
+- Nome
+- Email
+- Senha
