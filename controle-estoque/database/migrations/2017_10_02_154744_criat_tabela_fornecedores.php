@@ -18,6 +18,7 @@ class CriatTabelaFornecedores extends Migration
             $table->string('nome');
             $table->string('cnpj');
             $table->string('endereco');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -25,7 +25,7 @@
 			<div class="panel-body">
 			<p>Permite cadastrar, remover, atualizar e pesquisar produtos no estoque</p>
 			</div>
-			<p>&nbsp;&nbsp;<a href="#" class="btn btn-default btn-lg">Gerenciar produtos</a></p>
+			<p>&nbsp;&nbsp;<a href="/produto" class="btn btn-default btn-lg">Gerenciar produtos</a></p>
 		</div>
 
 		<div class="panel panel-default">
@@ -35,7 +35,7 @@
 			<div class="panel-body">
 			<p>Permite inserir, excluir e atualizar fornecedores</p>
 			</div>
-			<p>&nbsp;&nbsp;<a href="#" class="btn btn-default btn-lg">Gerenciar fornecedores</a></p>
+			<p>&nbsp;&nbsp;<a href="/fornecedor" class="btn btn-default btn-lg">Gerenciar fornecedores</a></p>
 		</div>
 
 		<div class="panel panel-default">

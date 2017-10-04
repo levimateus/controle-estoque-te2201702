@@ -8,10 +8,12 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>@yield('pageTitle')</title> 
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet">
+
 </head>
 <body>
     <div id="app">
@@ -70,7 +72,7 @@
 
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
-                                        <a href="/produto">Minha conta</a>
+                                        <a href="#">Minha conta</a>
                                     </li>
                                     <li>
                                         <a href="{{ route('logout') }}"

@@ -18,12 +18,16 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/produtos', 'ProdutoController@index');
-Route::get('/produtos/fornecedor/{id}', 'ProdutoController@listarPorFornecedor');
-Route::get('/produtos/buscar', 'ProdutoController@buscar');
-Route::get('/produtos/esgotados', 'ProdutoController@esgotados');
-Route::post('/inserir/produto', 'ProdutoController@store');
-Route::post('/debitar/produto', 'ProdutoController@debitar');
-Route::post('/editar/produto', 'ProdutoController@editar');
-Route::get('/fornecedores', 'FornecedorController@index');
-Route::post('/inserir/fornecedor', 'FornecedorController@store');
+Route::get('/produto', 'ProdutoController@index');
+Route::get('/produto/fornecedor/{id}', 'ProdutoController@listarPorFornecedor');
+Route::get('/produto/buscar', 'ProdutoController@buscar');
+Route::get('/produto/esgotados', 'ProdutoController@esgotados');
+Route::post('/produto/inserir', 'ProdutoController@store');
+Route::post('/produto/debitar', 'ProdutoController@debitar');
+Route::post('/produto/editar', 'ProdutoController@editar');
+
+Route::get('/fornecedor', 'FornecedorController@index');
+Route::get('/fornecedor/buscar', 'FornecedorController@buscar');
+Route::post('/fornecedor/deletar', 'FornecedorController@deletar');
+Route::post('/fornecedor/editar', 'FornecedorController@editar');
+Route::post('/fornecedor/inserir', 'FornecedorController@store');

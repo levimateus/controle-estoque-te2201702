@@ -62,8 +62,8 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        parent::validaLogin();
         $user = Auth()->user();
-
         if ($user->admin == 0) {
             abort(403);
         }

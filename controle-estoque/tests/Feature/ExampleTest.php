@@ -15,11 +15,6 @@ class ExampleTest extends TestCase
     public function testBasicTest()
     {
         $response = $this->get('/');
-
-        $this->markTestIncomplete(
-          'This test has not been implemented yet.'
-        );
-        
-        $response->assertStatus(200);
+        $response->assertStatus(302);
     }
 }

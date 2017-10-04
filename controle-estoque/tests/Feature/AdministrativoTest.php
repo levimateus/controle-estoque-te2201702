@@ -14,9 +14,7 @@ class AdministrativoTest extends TestCase
      */
     public function testExample()
     {
-        $this->markTestIncomplete(
-          'This test has not been implemented yet.'
-        );
+        $this->assertTrue(true);
     }
 
     public function test_usuario_administrativo_pode_visualizar_valor_total_estoque(){
