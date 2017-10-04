@@ -11,6 +11,6 @@ class Produto extends Model
     protected $fillable = ['nome', 'descricao', 'custo', 'quantidade', 'fornecedor_id'];
 
     public function fornecedor(){
-    	return $this->belongsTo('App\Fornecedor');
+    	return $this->belongsTo(Fornecedor::class);
     }
 }

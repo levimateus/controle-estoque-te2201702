@@ -30,8 +30,6 @@ class FornecedorController extends Controller
     	else{
     		abort(403);
     	}
-
     }
 
-    
 }
