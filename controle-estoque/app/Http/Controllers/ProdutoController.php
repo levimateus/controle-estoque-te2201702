@@ -19,7 +19,7 @@ class ProdutoController extends Controller
     
     public function buscar(Request $request){
         parent::validaLogin();
-        $produto = DB::select('select * from produtos where nome = ?', [$request->nome]);
+        $produto = DB::select('select * from produtos where nome like ?', ['%'.$request->nome.'%']);
         return view('produto.pesquisa', compact('produto'));
     }
 
@@ -28,13 +28,7 @@ class ProdutoController extends Controller
         $produto = Produto::find($request->id);
         $produto->quantidade -= $request->quantidade;
         $produto->save();
-        return redirect('/produtos');
-    }
-
-    public function esgotados(){
-        parent::validaLogin();
-        $produtos = DB::select('select * from produtos where quantidade = 0');
-        return view('produto.esgotados', compact('produtos'));
+        return redirect('/produto');
     }
 
     public function store(Request $request){

@@ -154,5 +154,6 @@ class FornecedoresTest extends TestCase
         $response->assertStatus(302);
 
         $this->assertSoftDeleted('fornecedores', ['id' => $fornecedor->id]);
+        $this->assertDatabaseMissing('produtos', ['fornecedor_id' => $fornecedor->id]);
     }
 }

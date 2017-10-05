@@ -112,36 +112,6 @@ class ProdutosTest extends TestCase
 
 	}
 
-	public function test_produtos_com_quantidade_zero_sao_exibidos_separadamente(){
-		Artisan::call('migrate');
-		$usuario = factory('App\User')->create();
-		$fornecedor = factory('App\Fornecedor')->create();
-
-		for ($i = 0; $i < 5; $i++) { 
-			$produtos[] = factory('App\Produto')->create();
-		}
-
-		$produtos[3]->quantidade = 0;
-		$produtos[3]->save();
-		$produtos[4]->quantidade = 0;
-		$produtos[4]->save();
-		$this->assertDatabaseHas('fornecedores', ['id' => $fornecedor->id]);
-
-		//se não estiver logado
-		$response = $this->withExceptionHandling()
-					     ->call('GET', '/produto/esgotados');
-
-		$response->assertStatus(403);
-
-		//se estiver
-		$response = $this->withExceptionHandling()
-					     ->actingAs($usuario)
-					     ->call('GET', '/produto/esgotados');
-
-		$response->assertStatus(200);
-        $response->assertSee(''.$produtos[3]->quantidade);
-	}
-
 	public function test_usuarios_logados_podem_listar_produtos(){
 		Artisan::call('migrate');
 		$usuario = factory('App\User')->create();

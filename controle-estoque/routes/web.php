@@ -21,7 +21,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/produto', 'ProdutoController@index');
 Route::get('/produto/fornecedor/{id}', 'ProdutoController@listarPorFornecedor');
 Route::get('/produto/buscar', 'ProdutoController@buscar');
-Route::get('/produto/esgotados', 'ProdutoController@esgotados');
 Route::post('/produto/inserir', 'ProdutoController@store');
 Route::post('/produto/debitar', 'ProdutoController@debitar');
 Route::post('/produto/editar', 'ProdutoController@editar');
