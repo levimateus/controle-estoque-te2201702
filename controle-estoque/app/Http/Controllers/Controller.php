@@ -14,4 +14,11 @@ class Controller extends BaseController
     public function validaLogin(){
     	if(auth()->user() == null) abort(403); 
     }
+
+    public function validaAdm(){
+    	$user = Auth()->user();
+        if ($user->admin == 0) {
+            abort(403);
+        }
+    }
 }

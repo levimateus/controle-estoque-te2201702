@@ -63,17 +63,13 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         parent::validaLogin();
-        $user = Auth()->user();
-        if ($user->admin == 0) {
-            abort(403);
-        }
-        else{
-            return User::create([
-                    'name' => $data['name'],
-                    'email' => $data['email'],
-                    'password' => bcrypt($data['password']),
-                    'admin' => $data['admin']
-            ]);
-        }  
+        parent::validaAdm();
+
+        return User::create([
+                'name' => $data['name'],
+                'email' => $data['email'],
+                'password' => bcrypt($data['password']),
+                'admin' => $data['admin']
+        ]);
     }
 }

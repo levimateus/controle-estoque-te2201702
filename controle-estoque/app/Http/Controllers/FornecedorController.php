@@ -13,8 +13,10 @@ class FornecedorController extends Controller
 {
     public function index(){
         parent::validaLogin();
+        $user = Auth()->user();
+        $admin = $user->admin;
         $fornecedores = Fornecedor::all();
-        return view('fornecedor.index', compact('fornecedores'));
+        return view('fornecedor.index', compact('fornecedores', 'admin'));
     }
 
     public function store(Request $request){

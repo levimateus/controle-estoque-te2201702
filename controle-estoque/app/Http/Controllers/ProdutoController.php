@@ -12,9 +12,11 @@ class ProdutoController extends Controller
 {
     public function index(){
         parent::validaLogin();
+        $user = Auth()->user();
+        $admin = $user->admin;
         $produtos = Produto::all();
         $fornecedores = Fornecedor::orderBy('nome', 'DESC')->get();
-        return view('produto.index', compact('produtos', 'fornecedores'));
+        return view('produto.index', compact('produtos', 'fornecedores', 'admin'));
     }
     
     public function buscar(Request $request){
@@ -40,7 +42,11 @@ class ProdutoController extends Controller
         $produto->custo = $request->custo;
         $produto->quantidade = $request->quantidade;
         $produto->fornecedor_id = $request->fornecedor;
-        $produto->save();
+
+        if (!empty($request->fornecedor)) {
+            $produto->save();
+        }
+
         return redirect()->back();
     }
 
@@ -52,7 +58,10 @@ class ProdutoController extends Controller
         $produto->custo = $request->custo;
         $produto->quantidade = $request->quantidade;
         $produto->fornecedor_id = $request->fornecedor;
-        $produto->save();
+        
+        if (!empty($request->fornecedor)) {
+            $produto->save();
+        }
         return redirect()->back();
     }
 

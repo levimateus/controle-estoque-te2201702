@@ -59,9 +59,13 @@
                                     <li>
                                         <a href="/fornecedor">Fornecedores</a>
                                     </li>
+                                    @if(isset($admin))
+                                    @if($admin == 1)
                                     <li>
-                                        <a href="/fornecedor">Usuários</a>
+                                        <a href="/usuario">Usuários</a>
                                     </li>
+                                    @endif
+                                    @endif
                                 </ul>
                             </li>
 
@@ -71,9 +75,6 @@
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
-                                    <li>
-                                        <a href="#">Minha conta</a>
-                                    </li>
                                     <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();

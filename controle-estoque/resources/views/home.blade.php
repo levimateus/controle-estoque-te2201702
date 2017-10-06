@@ -8,6 +8,7 @@
 		<hr>
 		<br>
 
+		@if($admin == 1)
 		<div class="panel panel-default">
 			<div class="panel-heading">
 				<h3 class="panel-title">Dashboard</h3>
@@ -15,8 +16,18 @@
 			<div class="panel-body">
 			<p>Os usuários do tipo administrador poderão visualizar o valor total dos produtos em estoque</p>
 			</div>
-			<p>&nbsp;&nbsp;<a href="#" class="btn btn-default btn-lg">Acessar Dashboard</a></p>
+			<p>&nbsp;&nbsp;<a href="/dashboard" class="btn btn-default btn-lg">Acessar Dashboard</a></p>
 		</div>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">Gerenciar usuários</h3>
+			</div>
+			<div class="panel-body">
+			<p>Permite ao administrador cadastrar, pesquisar e gerenciar usuários cadastrados</p>
+			</div>
+			<p>&nbsp;&nbsp;<a href="/usuario" class="btn btn-default btn-lg">Gerenciar usuários</a></p>
+		</div>
+		@endif
 
 		<div class="panel panel-default">
 			<div class="panel-heading">
@@ -36,16 +47,6 @@
 			<p>Permite cadastrar, remover, atualizar e pesquisar produtos no estoque</p>
 			</div>
 			<p>&nbsp;&nbsp;<a href="/produto" class="btn btn-default btn-lg">Gerenciar produtos</a></p>
-		</div>
-
-		<div class="panel panel-default">
-			<div class="panel-heading">
-				<h3 class="panel-title">Gerenciar usuários</h3>
-			</div>
-			<div class="panel-body">
-			<p>Permite ao administrador cadastrar, pesquisar e gerenciar usuários cadastrados</p>
-			</div>
-			<p>&nbsp;&nbsp;<a href="#" class="btn btn-default btn-lg">Gerenciar usuários</a></p>
 		</div>
     </div>
 </div>

@@ -8,30 +8,13 @@
 			Fornecedores encontrados:
 		</h3>	
 		<a href="/fornecedor" style="float: right; margin-right: 6px; margin-bottom: 10px">
-			<button class="btn btn-primary btn-lg" >
-				<i class="fa fa-refresh" aria-hidden="true"></i>
-			</button>
-		</a>
-		<a href="/fornecedor" style="float: right; margin-right: 6px; margin-bottom: 10px">
 			<button class="btn btn-warning btn-lg" >
 				Voltar
 			</button>
 		</a>
-		<button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#novo_fornecedor" href="" style="float: right; margin-right: 6px; margin-bottom: 6px">
-			<i class="fa fa-plus" aria-hidden="true"></i>
-		</button>
 		
 		</div>
     <div class="row">
-    	<form action="/fornecedor/buscar" method="get">
-		{{ csrf_field()}}
-			<div class="input-group">
-				<input type="text" name="nome" class="form-control" placeholder="Pesquisar fornecedor por nome...">
-				<span class="input-group-btn">
-				<input type="submit" class="btn btn-info" type="button" value="Pesquisar">
-				</span>
-			</div>
-		</form>
 		<table class="table">
 			<tr>
 				<th>Nome</th>
