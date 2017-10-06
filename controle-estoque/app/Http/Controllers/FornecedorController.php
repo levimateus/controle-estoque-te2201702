@@ -29,7 +29,7 @@ class FornecedorController extends Controller
 
     public function editar(Request $request){
         parent::validaLogin();
-        $fornecedor = Fornecedor::find($request->id)->first();
+        $fornecedor = Fornecedor::where('id', $request->id)->first();
         $fornecedor->nome = $request->nome;
         $fornecedor->cnpj = $request->cnpj;
         $fornecedor->endereco = $request->endereco;
@@ -39,8 +39,8 @@ class FornecedorController extends Controller
 
     public function buscar(Request $request){
         parent::validaLogin();
-        $fornecedor = DB::select('select * from fornecedores where nome like ?', ['%'.$request->nome.'%']);
-        return view('fornecedor.pesquisa', compact('fornecedor'));    
+        $fornecedores = DB::select('select * from fornecedores where nome like ?', ['%'.$request->nome.'%']);
+        return view('fornecedor.pesquisa', compact('fornecedores'));    
     }
 
     public function deletar(Request $request){

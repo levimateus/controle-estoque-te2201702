@@ -20,16 +20,6 @@
 
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				<h3 class="panel-title">Gerenciar produtos</h3>
-			</div>
-			<div class="panel-body">
-			<p>Permite cadastrar, remover, atualizar e pesquisar produtos no estoque</p>
-			</div>
-			<p>&nbsp;&nbsp;<a href="/produto" class="btn btn-default btn-lg">Gerenciar produtos</a></p>
-		</div>
-
-		<div class="panel panel-default">
-			<div class="panel-heading">
 				<h3 class="panel-title">Gerenciar fornecedores</h3>
 			</div>
 			<div class="panel-body">
@@ -40,12 +30,12 @@
 
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				<h3 class="panel-title">Minha conta</h3>
+				<h3 class="panel-title">Gerenciar produtos</h3>
 			</div>
 			<div class="panel-body">
-			<p>Acessa detalhes sobre a conta do usuário</p>
+			<p>Permite cadastrar, remover, atualizar e pesquisar produtos no estoque</p>
 			</div>
-			<p>&nbsp;&nbsp;<a href="#" class="btn btn-default btn-lg">Acessar minha conta</a></p>
+			<p>&nbsp;&nbsp;<a href="/produto" class="btn btn-default btn-lg">Gerenciar produtos</a></p>
 		</div>
 
 		<div class="panel panel-default">
@@ -57,9 +47,6 @@
 			</div>
 			<p>&nbsp;&nbsp;<a href="#" class="btn btn-default btn-lg">Gerenciar usuários</a></p>
 		</div>
-		
-
-        
     </div>
 </div>
 @endsection

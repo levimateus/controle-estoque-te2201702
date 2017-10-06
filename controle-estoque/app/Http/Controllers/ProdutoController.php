@@ -19,8 +19,9 @@ class ProdutoController extends Controller
     
     public function buscar(Request $request){
         parent::validaLogin();
-        $produto = DB::select('select * from produtos where nome like ?', ['%'.$request->nome.'%']);
-        return view('produto.pesquisa', compact('produto'));
+        $fornecedores = Fornecedor::all();
+        $produtos = DB::select('select * from produtos where nome like ?', ['%'.$request->nome.'%']);
+        return view('produto.pesquisa', compact('produtos', 'fornecedores'));
     }
 
     public function debitar(Request $request){
@@ -28,7 +29,7 @@ class ProdutoController extends Controller
         $produto = Produto::find($request->id);
         $produto->quantidade -= $request->quantidade;
         $produto->save();
-        return redirect('/produto');
+        return redirect()->back();
     }
 
     public function store(Request $request){
@@ -40,7 +41,7 @@ class ProdutoController extends Controller
         $produto->quantidade = $request->quantidade;
         $produto->fornecedor_id = $request->fornecedor;
         $produto->save();
-        return redirect('/produto');
+        return redirect()->back();
     }
 
     public function editar(Request $request){
@@ -52,12 +53,14 @@ class ProdutoController extends Controller
         $produto->quantidade = $request->quantidade;
         $produto->fornecedor_id = $request->fornecedor;
         $produto->save();
-        return redirect('/produto');
+        return redirect()->back();
     }
 
     public function listarPorFornecedor($id){
         parent::validaLogin();
+        $deFornecedor = Fornecedor::where('id', $id)->first();
+        $fornecedores = Fornecedor::all();
         $produtos = DB::select('select * from produtos where fornecedor_id = ?', [$id]);
-        return view('teste', compact('produtos'));
+        return view('fornecedor.produtos', compact('produtos', 'fornecedores', 'deFornecedor'));
     }
 }

@@ -99,8 +99,12 @@
 							</div>
 						</div>
 					</div>
-
-					<button type="button" class="btn btn-success" data-toggle="modal" data-target="#produtos{{$fornecedor->id}}">Produtos</button>
+					<a href="produto/fornecedor/{{$fornecedor->id}}">
+						<button type="button" class="btn btn-success">
+							Produtos
+						</button>
+					</a>
+					
 				</td>
 			</tr>
 

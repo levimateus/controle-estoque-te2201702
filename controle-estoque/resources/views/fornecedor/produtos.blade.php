@@ -1,20 +1,31 @@
 @extends('layouts.app')
-@section('pageTitle', 'Pesquisa de produtos')
+@section('pageTitle', 'Produtos')
 @section('content')
 <div class="container">
 
+	<script>
+		function goBack() {
+		    window.history.back();
+		}
+	</script>
+
 	<div class="row">
 		<h3 style="float: left; margin-top: 8px">
-			Produtos encontrados
+			Produtos de {{$deFornecedor->nome}} ({{$deFornecedor->cnpj}})
 		</h3>	
 		<a href="#esgotados" style="float: right; margin-right: 6px; margin-bottom: 10px">
 			<button class="btn btn-danger btn-lg" >
 				Esgotados
 			</button>
 		</a>
-		<a href="/produto" style="float: right; margin-right: 6px; margin-bottom: 10px">
-			<button class="btn btn-warning btn-lg" >
-				Voltar
+
+		<button class="btn btn-warning btn-lg" style="float: right; margin-right: 6px; margin-bottom: 10px" onclick="goBack()">
+			Voltar
+		</button>
+
+		<a href="/produto/fornecedor/{{$deFornecedor->id}}" style="float: right; margin-right: 6px; margin-bottom: 10px">
+			<button class="btn btn-primary btn-lg" >
+				<i class="fa fa-refresh" aria-hidden="true"></i>
 			</button>
 		</a>
 		</div>
