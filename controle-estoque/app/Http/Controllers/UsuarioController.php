@@ -23,6 +23,11 @@ class UsuarioController extends Controller
     	parent::validaAdm();
     	$usuario = new User;
 
+//        $this->validate($request, [
+//            'name' => 'required|min:20',
+//            'email' => 'unique:users|email|min:5',
+//        ]);
+
     	$usuario->name = $request->name;
     	$usuario->email = $request->email;
     	$usuario->password = bcrypt($request->password);
